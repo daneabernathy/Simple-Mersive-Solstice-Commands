@@ -64,7 +64,7 @@ def pod_look_in(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
 
         #URL to get config info from pod
         myconfigurl = 'http://'+value+'/api/config?password='+admin_password
@@ -95,7 +95,7 @@ def pod_reboot(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
         
         #produce pod http link from user IP address
         pod_reboot_link = 'http://'+value+'/api/control/reboot?password='+admin_password
@@ -115,7 +115,7 @@ def pod_boot_users(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
          
        #produce pod http link from user IP address
         pod_boot_users_link = 'http://'+value+'/api/control/boot?password='+admin_password
@@ -135,7 +135,7 @@ def pod_clear(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
         
         #produce pod http link from user IP address
         pod_clear_link = 'http://'+value+'/api/control/clear?password='+admin_password
@@ -155,7 +155,7 @@ def pod_restart(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
         
         #produce pod http link from user IP address
         pod_restart_link = 'http://'+value+'/api/control/restart?password='+admin_password
@@ -174,7 +174,7 @@ def get_logs(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
         
         #produce pod http link from user IP address
         pod_logs = 'http://'+value+'/diag/logs.zip?password='+admin_password
@@ -193,7 +193,7 @@ def set_edid_1080p(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
         
         #produce pod http link from user IP address
         pod_edid_1080p = 'http://'+value+'/diag/displaymode?mode=16?password='+admin_password
@@ -212,7 +212,7 @@ def pod_key_reset(*args):
         #get IP address from user
         value = ip_address.get()
 
-        admin_password = '*50lst1C3!'
+        admin_password = '*PASSWORD!'
         
         #produce pod http link from user IP address
         pod_key_reset_link = 'http://'+value+'/api/control/resetkey?password='+admin_password
