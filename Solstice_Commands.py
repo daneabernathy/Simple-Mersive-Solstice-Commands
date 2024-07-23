@@ -1,5 +1,5 @@
 from __future__ import print_function
-import pyautogui
+import  pyautogui
 from tkinter import *
 from tkinter import ttk
 import sys
@@ -9,12 +9,11 @@ import datetime
 import requests
 import pdb
 import itertools
-import pyautogui
 import webbrowser
 
 
 #Function to get screen key and pod name and keep them in variables
-#Function also opens a web browser with the user IP address
+#Function also opens a web browser with the IP address
 def get_pod_info(*args):
     try:
         #get IP address from user
