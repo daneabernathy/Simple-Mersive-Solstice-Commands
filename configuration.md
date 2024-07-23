@@ -1,6 +1,6 @@
 ## OpenControl API 1.0 Guide
 
-- [1 OpenControl API for Solstice](#1-opencontrol-api-for-solstice)
+- [OpenControl API for Solstice](#opencontrol-api-for-solstice)
 - [Using the OpenControl API](#using-the-opencontrol-api)
   - [JSON Record Structure](#json-record-structure)
   - [Securing API Communications](#securing-api-communications)
@@ -37,7 +37,7 @@
   - [SDS Commands](#sds-commands)
   - [Valid Time Zone Values](#valid-time-zone-values)
 
-# 1 OpenControl API for Solstice
+# OpenControl API for Solstice
 
 The OpenControl protocol supports third-party integration with Solstice Pods through a simple RESTful API. OpenControl can be an important component in a Solstice deployment because it allows integrators and installers to more deeply integrate Solstice with existing room infrastructure.
 
