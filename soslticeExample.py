@@ -9,8 +9,8 @@ false=0
 #Solstice Pod stats URL: IPAddress/api/stats
 #Solstice Pod control URL: IPAddress/api/control
 #Solstice Pod calendar URL: IPAddress/api/calendar
-IPAddress/api/version/
-IPAddress/api/serial-passthru
+#Solstice Pod config URL: IPAddress/api/version/
+#Solstice Pod config URL: IPAddress/api/serial-passthru
 
 
 newname = "New Name"
