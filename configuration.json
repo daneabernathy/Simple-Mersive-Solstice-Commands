@@ -1,0 +1,8 @@
+{
+    "savePassword": false,
+    "adminPassword": "",
+    "saveListFileLocation": false,
+    "solsticePodListFileLocation": "",
+    "backUpPodDetails": false,
+    "backUpPodDetailsFileLocation": ""
+}

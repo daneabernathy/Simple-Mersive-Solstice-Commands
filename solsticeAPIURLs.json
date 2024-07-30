@@ -1,0 +1,43 @@
+"solsticeAPIURLs": {
+    "type": "array",
+    "description": "Array of API URLs for the Solstice Pods",
+    "arrayItems": [
+        {
+            "configAPIURL": {
+                "type": "string",
+                "description": "URI for the config API",
+                "value": "/api/config"
+            },
+            "statsAPIURL": {
+                "type": "string",
+                "description": "URI for the stats API",
+                "value": "/api/stats"
+            },
+            "controlAPIURL": {
+                "type": "string",
+                "description": "URI for the control API",
+                "value": "/api/control"
+            },
+            "calendarAPIURL": {
+                "type": "string",
+                "description": "URI for the calendar API",
+                "value": "/api/calendar"
+            },
+            "versionAPIURL": {
+                "type": "string",
+                "description": "URI for the version API",
+                "value": "/api/version"
+            },
+            "serialAPIURL": {
+                "type": "string",
+                "description": "URI for the serial API",
+                "value": "/api/serial-passthru/send?data="
+            },
+            "sdsAPIURL": {
+                "type": "string",
+                "description": "URI for the SDS API",
+                "value": "/api/discover"
+            }
+        }
+    ]
+}

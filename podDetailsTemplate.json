@@ -1,0 +1,1311 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Solstice API",
+        "description": "The Solstice API allows developers to access and manage resources within the Solstice platform.",
+        "termsOfService": "https://solstice.com/terms",
+        "contact": {
+            "name": "Solstice Developers",
+            "url": "https://developer.solstice.com",
+            "email": "support@solstice.com"
+        },
+        "version": "1.0.0"
+    },
+    "externalDocs": {
+        "description": "Find out more about OpenAPI",
+        "url": "https://swagger.io/specification/"
+    },
+    "servers": [
+        {
+            "url": "https://{solsticePodIP}/api",
+            "description": "Main (production) server"
+        }
+    ],
+    "paths": {
+        "/config": {
+            "get": {
+                "/m_displayld": {
+                    "type": "string",
+                    "description": "Unique identifier for the display"
+                },
+                "/m_serverVersion": {
+                    "type": "string",
+                    "description": "Version of the Solstice Pod software"
+                },
+                "/m_productName": {
+                    "type": "string",
+                    "description": "Name of the Solstice Pod product"
+                },
+                "/m_productVariant": {
+                    "type": "string",
+                    "description": "Variant of the Solstice Pod product"
+                },
+                "/m_productHardwareVersion": {
+                    "type": "integer",
+                    "description": "Hardware version of the Solstice Pod"
+                }
+            },
+            "subPaths": {
+                "/m_displayInformation": {
+                    "subPaths": {
+                        "/m_ipv4": {
+                            "get": {
+                                "type": "string",
+                                "description": "IPv4 address of the display"
+                            }
+                        },
+                        "/m_displayName": {
+                            "get": {
+                                "type": "string",
+                                "description": "Name of the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "Name of the display"
+                            }
+                        },
+                        "/m_hostName": {
+                            "get": {
+                                "type": "string",
+                                "description": "Hostname of the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "Hostname of the display"
+                            }
+                        },
+                        "/m_port": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Port number of the display"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Port number of the display"
+                            }
+                        }
+                    }
+                },
+                "m_generalCuration": {
+                    "subPaths": {
+                        "/language": {
+                            "get": {
+                                "type": "string",
+                                "description": "Language of the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "Language of the display",
+                                "acceptedValues": [
+                                    "en_US",
+                                    "ja_JP",
+                                    "de_DE",
+                                    "es_ES",
+                                    "fr_FR",
+                                    "zh_TW",
+                                    "XX"
+                                ]
+                            }
+                        },
+                        "/showSplashScreen": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Show splash screen on the display"
+                            }
+                        },
+                        "/localConfigEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Local configuration enabled on the display"
+                            }
+                        },
+                        "/browserConfigEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Browser configuration enabled on the display"
+                            }
+                        },
+                        "/autoConnectOnClientLaunch": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Automatically connect on client launch"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Automatically connect on client launch"
+                            }
+                        },
+                        "/hideOnLastClientDisconnect": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Hide on last client disconnect"
+                            }
+                        },
+                        "/launchOnClientConnect": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Launch on client connect"
+                            }
+                        },
+                        "/launchOnSystemStart": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Launch on system start"
+                            }
+                        },
+                        "/theme": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Theme of the display"
+                            }
+                        },
+                        "/advancedRenderingEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Advanced rendering enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Advanced rendering enabled on the display"
+                            }
+                        },
+                        "/hdmiOutDisplayMode": {
+                            "post": {
+                                "type": "integer",
+                                "description": "Gen3 Pods Only - Change the dual display mode to Mirror=1, Seamless Extend=2, or Extend=3.              ",
+                                "acceptedValues": [
+                                    0,
+                                    1,
+                                    2,
+                                    3
+                                ]
+                            }
+                        },
+                        "/inkEnabled": {
+                            "post": {
+                                "type": "boolean",
+                                "description": "Ink enabled on the display"
+                            }
+                        },
+                        "/windowMode": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Window mode of the display"
+                            }
+                        },
+                        "/windowTop": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Top position of the window"
+                            }
+                        },
+                        "/windowLeft": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Left position of the window"
+                            }
+                        },
+                        "/windowWidth": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Width of the window"
+                            }
+                        },
+                        "/windowHeight": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Height of the window"
+                            }
+                        }
+                    }
+                },
+                "/m_authenticationCuration": {
+                    "subPaths": {
+                        "/authenticationMode": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Authentication mode on the display"
+                            }
+                        },
+                        "/screenKeyEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Screen key enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Screen key enabled on the display"
+                            }
+                        },
+                        "/moderatorApprovalDisabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Moderator approval disabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Moderator approval disabled on the display"
+                            }
+                        },
+                        "/sessionKey": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Session key enabled on the display"
+                            }
+                        }
+                    }
+                },
+                "/m_networkCuration": {
+                    "subPaths": {
+                        "/connectionShowFlags": {
+                            "get": {
+                                "type": "bitWiseFlags",
+                                "description": "Bitwise flags (post as decimal int) Connection show flags on the display"
+                            },
+                            "post": {
+                                "type": "bitWiseFlags",
+                                "description": "Bitwise flags (post as decimal int) Connection show flags on the display",
+                                "acceptedValues": [
+                                    "00000000",
+                                    "00000001",
+                                    "00000010",
+                                    "00000011",
+                                    "00000100",
+                                    "00000101",
+                                    "00000110",
+                                    "00000111",
+                                    "00001000",
+                                    "00001001",
+                                    "00001010",
+                                    "00001011",
+                                    "00001100"
+                                ]
+                            }
+                        },
+                        "/discoveryBroadcastEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Discovery broadcast enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Discovery broadcast enabled on the display"
+                            }
+                        },
+                        "/publishToNameServer": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Publish to name server on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Publish to name server on the display"
+                            }
+                        },
+                        "/maximumConnections": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Maximum connections on the display, cannot be larger than maximumLicensedConnections"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Maximum connections on the display, cannot be larger than maximumLicensedConnections"
+                            }
+                        },
+                        "/maximumLicensedCOnnections": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Maximum licensed connections on the display"
+                            }
+                        },
+                        "/maximumImageSize": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Maximum image size on the display"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Maximum image size on the display"
+                            }
+                        },
+                        "/maximumPublishedImageSize": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Maximum published image size on the display"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Maximum published image size on the display"
+                            }
+                        },
+                        "/mazximumAirPlayUsers": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Maximum AirPlay users on the display, cannot be set higher than 4 or lower than 1"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Maximum AirPlay users on the display, cannot be set higher than 4 or lower than 1"
+                            }
+                        },
+                        "/sdsHostName": {
+                            "get": {
+                                "type": "string",
+                                "description": "SDS host name on the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "SDS host name on the display"
+                            }
+                        },
+                        "/sdsHostName2": {
+                            "get": {
+                                "type": "string",
+                                "description": "SDS host name 2 on the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "SDS host name 2 on the display"
+                            }
+                        },
+                        "/remoteViewMode": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Remote view mode on the display"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Remote view mode on the display",
+                                "acceptedValues": [
+                                    0,
+                                    1,
+                                    2
+                                ]
+                            }
+                        },
+                        "/firewallMode": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Firewall mode on the display"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "Firewall mode on the display",
+                                "acceptedValues": [
+                                    0,
+                                    1,
+                                    2
+                                ]
+                            }
+                        },
+                        "/vlansEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "VLANs enabled on the display"
+                            }
+                        },
+                        "/postTypeDesktopSupported": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Post type desktop supported on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Post type desktop supported on the display"
+                            }
+                        },
+                        "/postTypeApplicationWindowsSupported": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Post type application windows supported on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Post type application windows supported on the display"
+                            }
+                        },
+                        "/postTypeMediaFilesSupported": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Post type media files supported on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Post type media files supported on the display"
+                            }
+                        },
+                        "/postTypeAirPlaySupported": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Post type AirPlay supported on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Post type AirPlay supported on the display"
+                            }
+                        },
+                        "/postTypeAndroidMirroringSupported": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Post type Android mirroring supported on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Post type Android mirroring supported on the display"
+                            }
+                        },
+                        "/bonjourProxyEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Bonjour proxy enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Bonjour proxy enabled on the display"
+                            }
+                        },
+                        "/ethernetEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Ethernet enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Ethernet enabled on the display"
+                            }
+                        },
+                        "/ethernetGatewayCheckEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Ethernet gateway check enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Ethernet gateway check enabled on the display"
+                            }
+                        },
+                        "/wifiMode": {
+                            "get": {
+                                "type": "integer",
+                                "description": "WiFi mode on the display"
+                            },
+                            "post": {
+                                "type": "integer",
+                                "description": "WiFi mode on the display",
+                                "acceptedValues": [
+                                    0,
+                                    1,
+                                    2,
+                                    3
+                                ]
+                            }
+                        },
+                        "/wifiAllowAdmin": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "WiFi allow admin on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "WiFi allow admin on the display"
+                            }
+                        },
+                        "/localOTAEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Local OTA enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Local OTA enabled on the display"
+                            }
+                        },
+                        "/localOTAUrl": {
+                            "get": {
+                                "type": "string",
+                                "description": "Local OTA URL on the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "Local OTA URL on the display"
+                            }
+                        },
+                        "/bulletinEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Bulletin enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Bulletin enabled on the display"
+                            }
+                        },
+                        "/wifiConfig": {
+                            "subPaths": {
+                                "/ssid": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "SSID of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "SSID of the WiFi network"
+                                    }
+                                },
+                                "/security": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Security of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Security of the WiFi network",
+                                        "acceptedValues": [
+                                            0,
+                                            1,
+                                            2,
+                                            3,
+                                            4
+                                        ]
+                                    }
+                                },
+                                "/eap": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "EAP of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "EAP of the WiFi network",
+                                        "acceptedValues": [
+                                            0,
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6
+                                        ]
+                                    }
+                                },
+                                "/phase2": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Phase 2 of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Phase 2 of the WiFi network",
+                                        "acceptedValues": [
+                                            0,
+                                            1,
+                                            2,
+                                            3,
+                                            4
+                                        ]
+                                    }
+                                },
+                                "/password": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Password of the WiFi network. GET returns '*'"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Password of the WiFi network"
+                                    }
+                                },
+                                "/dhcp": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "DHCP of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "DHCP of the WiFi network"
+                                    }
+                                },
+                                "/staticIP": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Static IP of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Static IP of the WiFi network"
+                                    }
+                                },
+                                "/gateway": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Gateway of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Gateway of the WiFi network"
+                                    }
+                                },
+                                "/prefixLength": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Prefix length of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Prefix length of the WiFi network"
+                                    }
+                                },
+                                "/dns1": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "DNS1 of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "DNS1 of the WiFi network"
+                                    }
+                                },
+                                "/dns2": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "DNS2 of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "DNS2 of the WiFi network"
+                                    }
+                                }
+                            }
+                        },
+                        "/apConfig": {
+                            "subPaths": {
+                                "/SSID": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "SSID of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "SSID of the WiFi network"
+                                    }
+                                },
+                                "/SecurityMode": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Security of the WiFi network"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Security of the WiFi network",
+                                        "acceptedValues": [
+                                            0,
+                                            1,
+                                            2,
+                                            3
+                                        ]
+                                    }
+                                },
+                                "/PSK": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Password of the WiFi network. GET returns '*'"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Password of the WiFi network"
+                                    }
+                                }
+                            }
+                        },
+                        "/ethernet": {
+                            "subPaths": {
+                                "/dhcp": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "DHCP of the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "DHCP of the Ethernet network"
+                                    }
+                                },
+                                "/staticIP": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Static IP of the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Static IP of the Ethernet network"
+                                    }
+                                },
+                                "/gateway": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Gateway of the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Gateway of the Ethernet network"
+                                    }
+                                },
+                                "/prefixLength": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Prefix length of the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Prefix length of the Ethernet network"
+                                    }
+                                },
+                                "/dns1": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "DNS1 of the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "DNS1 of the Ethernet network"
+                                    }
+                                },
+                                "/dns2": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "DNS2 of the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "DNS2 of the Ethernet network"
+                                    }
+                                },
+                                "/allowAdmin": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Allow admin on the Ethernet network"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Allow admin on the Ethernet network"
+                                    }
+                                }
+                            }
+                        },
+                        "/vlans": {
+                            "subPaths": {
+                                "/label": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Label of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Label of the VLAN"
+                                    }
+                                },
+                                "/tag": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Tag of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Tag of the VLAN"
+                                    }
+                                },
+                                "/enabled": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Enabled of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Enabled of the VLAN"
+                                    }
+                                },
+                                "/dhcp": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "DHCP of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "DHCP of the VLAN"
+                                    }
+                                },
+                                "/staticIP": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Static IP of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Static IP of the VLAN"
+                                    }
+                                },
+                                "/gateway": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Gateway of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Gateway of the VLAN"
+                                    }
+                                },
+                                "/prefixLength": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Prefix length of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Prefix length of the VLAN"
+                                    }
+                                },
+                                "/dns1": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "DNS1 of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "DNS1 of the VLAN"
+                                    }
+                                },
+                                "/dns2": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "DNS2 of the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "DNS2 of the VLAN"
+                                    }
+                                },
+                                "/allowAdmin": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Allow admin on the VLAN"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Allow admin on the VLAN"
+                                    }
+                                }
+                            }
+                        },
+                        "/httpProxerServerSettings": {
+                            "subPaths": {
+                                "/enabled": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Enabled of the HTTP proxy server"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Enabled of the HTTP proxy server"
+                                    }
+                                },
+                                "/ip": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "IP of the HTTP proxy server"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "IP of the HTTP proxy server"
+                                    }
+                                },
+                                "/port": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Port of the HTTP proxy server"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Port of the HTTP proxy server"
+                                    }
+                                },
+                                "/username": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Username"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Username"
+                                    }
+                                },
+                                "/password": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Password"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Password"
+                                    }
+                                },
+                                "/excludeLocalSubnet": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Exclude local subnet"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Exclude local subnet"
+                                    }
+                                }
+                            }
+                        },
+                        "/httpsProxerServerSettings": {
+                            "subPaths": {
+                                "/enabled": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Enabled of the HTTP proxy server"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Enabled of the HTTP proxy server"
+                                    }
+                                },
+                                "/ip": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "IP of the HTTP proxy server"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "IP of the HTTP proxy server"
+                                    }
+                                },
+                                "/port": {
+                                    "get": {
+                                        "type": "integer",
+                                        "description": "Port of the HTTP proxy server"
+                                    },
+                                    "post": {
+                                        "type": "integer",
+                                        "description": "Port of the HTTP proxy server"
+                                    }
+                                },
+                                "/username": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Username"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Username"
+                                    }
+                                },
+                                "/password": {
+                                    "get": {
+                                        "type": "string",
+                                        "description": "Password"
+                                    },
+                                    "post": {
+                                        "type": "string",
+                                        "description": "Password"
+                                    }
+                                },
+                                "/excludeLocalSubnet": {
+                                    "get": {
+                                        "type": "boolean",
+                                        "description": "Exclude local subnet"
+                                    },
+                                    "post": {
+                                        "type": "boolean",
+                                        "description": "Exclude local subnet"
+                                    }
+                                }
+                            }
+                        },
+                        "/m_rssFeedList": {
+                            "get": {
+                                "type": "array",
+                                "description": "RSS feed list"
+                            },
+                            "post": {
+                                "type": "array",
+                                "description": "RSS feed list",
+                                "example": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Custom Message",
+                                        "length": 0,
+                                        "uri": "This is a test123"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "solstice wireless display",
+                                        "length": 3,
+                                        "uri": "https://www.mersive.com/go.xml"
+                                    }
+                                ]
+                            }
+                        },
+                        "/forgetSSID": {
+                            "post": {
+                                "type": "string",
+                                "description": "Forget SSID",
+                                "example": "{\"disable\": { \"ssid\": \"ssid_name\"}}"
+                            }
+                        }
+                    }
+                },
+                "/m_licesneCuration": {
+                    "subPaths": {
+                        "/licenseStatus": {
+                            "get": {
+                                "type": "integer",
+                                "description": "License status of the display"
+                            }
+                        },
+                        "/trustFlags": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Trust flags of the display. 7=fully trusted, <7=license is not trusted and must be repaired"
+                            }
+                        },
+                        "/fullfillmentType": {
+                            "get": {
+                                "type": "string",
+                                "description": "PUBLISHER_ACTIVATION or TRIAL"
+                            }
+                        },
+                        "/enabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "License enabled on the display"
+                            }
+                        },
+                        "/fullfillmentId": {
+                            "get": {
+                                "type": "string",
+                                "description": "unique ID used to distinguish diferent pods"
+                            }
+                        },
+                        "/entitlementId": {
+                            "get": {
+                                "type": "string",
+                                "description": "activation code used to activiate the pod"
+                            }
+                        },
+                        "/productId": {
+                            "get": {
+                                "type": "string",
+                                "description": "Solstice"
+                            }
+                        },
+                        "/suiteId": {
+                            "get": {
+                                "type": "string",
+                                "description": "Should be null, intenal use only"
+                            }
+                        },
+                        "/expirationDate": {
+                            "get": {
+                                "type": "string",
+                                "description": "Expiration date of the display"
+                            }
+                        },
+                        "/featureLine": {
+                            "get": {
+                                "type": "string",
+                                "description": "The license string returned from the license server"
+                            }
+                        },
+                        "/numDaysToExpiration": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Number of days to expiration"
+                            }
+                        },
+                        "/maxUsers": {
+                            "get": {
+                                "type": "string",
+                                "description": "Maximum number of users"
+                            }
+                        },
+                        "/licensing_maxPosts": {
+                            "get": {
+                                "type": "integer",
+                                "description": "Maximum number of posts"
+                            }
+                        },
+                        "/licensing_remoteViewIsConfigurable": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Remote view is configurable"
+                            }
+                        },
+                        "/licensing_runtimeAccessControls": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Runtime access controls"
+                            }
+                        }
+                    }
+                },
+                "m_userGroupCuration": {
+                    "subPaths": {
+                        "/adminPassword": {
+                            "post": {
+                                "type": "string",
+                                "description": "Admin password"
+                            }
+                        },
+                        "/passwordValidationEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Password validation enabled"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Password validation enabled"
+                            }
+                        }
+                    }
+                },
+                "/m_systemCuration": {
+                    "subPaths": {
+                        "/autoDateTime": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Auto date time on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Auto date time on the display"
+                            }
+                        },
+                        "/ntpServer": {
+                            "get": {
+                                "type": "string",
+                                "description": "NTP server on the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "NTP server on the display"
+                            }
+                        },
+                        "/dateTime": {
+                            "get": {
+                                "type": "string",
+                                "description": "Date time on the display"
+                            }
+                        },
+                        "/timeZone": {
+                            "get": {
+                                "type": "string",
+                                "description": "Time zone on the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "Time zone on the display"
+                            }
+                        },
+                        "/timeZones": {
+                            "get": {
+                                "type": "array",
+                                "description": "Time zones on the display"
+                            }
+                        },
+                        "/scheduledRestartEnabled": {
+                            "get": {
+                                "type": "boolean",
+                                "description": "Scheduled restart enabled on the display"
+                            },
+                            "post": {
+                                "type": "boolean",
+                                "description": "Scheduled restart enabled on the display"
+                            }
+                        },
+                        "/scheduledRestartTime": {
+                            "get": {
+                                "type": "string",
+                                "description": "Scheduled restart time on the display"
+                            },
+                            "post": {
+                                "type": "string",
+                                "description": "Scheduled restart time on the display"
+                            }
+                        }
+                    }
+                },
+                "splashbackground": {
+                    "post": {
+                        "type": "formData",
+                        "description": "Classic Splash background image"
+                    },
+                    "subPaths": {
+                        "/0": {
+                            "post": {
+                                "type": "formData",
+                                "description": "Splash background image 1"
+                            }
+                        },
+                        "/1": {
+                            "post": {
+                                "type": "formData",
+                                "description": "Splash background image 2"
+                            }
+                        },
+                        "/2": {
+                            "post": {
+                                "type": "formData",
+                                "description": "Splash background image 3"
+                            }
+                        },
+                        "/3": {
+                            "post": {
+                                "type": "formData",
+                                "description": "Splash background image 4"
+                            }
+                        },
+                        "/4": {
+                            "post": {
+                                "type": "formData",
+                                "description": "Splash background image 5"
+                            }
+                        },
+                        "/5": {
+                            "post": {
+                                "type": "formData",
+                                "description": "Splash background image 6"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/control": {
+            "get": {
+                "/clear": {
+                        "description": "Clear the display"
+                },
+                "/boot": {
+                        "description": "Boots all connected users from the display"
+                },
+                "/reboot": {
+                        "description": "Reboot the display"
+                },
+                "/restart": {
+                        "description": "Restart the Solstice software without rebooting the display"
+                },
+                "/resetkey": {
+                        "description": "Reset the screen key"
+                },
+                "/suspend": {
+                        "description": "Suspend the display"
+                },
+                "/wake": {
+                        "description": "Wake the display"
+                }
+            }
+        }
+    }
+}
